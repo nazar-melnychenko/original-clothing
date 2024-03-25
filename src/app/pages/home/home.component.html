@@ -1,0 +1,29 @@
+<div class="wrapper">
+  <div class="addNewProduct">
+    <button type="button" pButton icon="pi pi-plus" (click)="togglePopup()" label="Add New Product"></button>
+  </div>
+  <div class="content">
+    <app-product
+      *ngFor="let product of products"
+      [product]="product"
+      (editProduct)="onEditProduct($event)"
+      (deleteProduct)="deleteProduct($event)"
+    />
+  </div>
+  <div class="paginatorWrapper">
+    <p-paginator
+      (onPageChange)="onPageChange($event)"
+      [first]="page"
+      [rows]="perPage"
+      [totalRecords]="totalProducts"
+      [rowsPerPageOptions]="[5, 10, 20]" />
+  </div>
+</div>
+
+<app-popup
+  [header]="isEditMode ? 'Edit product' : 'Add new product'"
+  [isVisible]="isPopupVisible"
+  [product]="selectedProduct"
+  (confirm)="onConfirm($event)"
+  (cancel)="onCancel()"
+/>

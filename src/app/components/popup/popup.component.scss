@@ -1,0 +1,18 @@
+.inputWrapper {
+   .row {
+    margin-bottom: 50px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+
+     .price-label {
+       margin-right: 30px;
+     }
+
+     input {
+       padding: 5px;
+       font-size: 21px;
+       color: #444;
+     }
+  }
+}

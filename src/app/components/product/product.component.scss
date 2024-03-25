@@ -1,0 +1,20 @@
+.wrapper {
+  border: 1px solid;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 15px black;
+  width: 270px;
+
+
+  img {
+    width: 100%;
+  }
+
+  .info {
+    padding: 5px 10px;
+  }
+  p-footer [type=button] {
+      margin: 10px;
+  }
+
+}

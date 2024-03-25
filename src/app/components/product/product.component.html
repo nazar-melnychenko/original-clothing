@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <img [src]="product.image" [alt]="product.name" >
+ <div class="info">
+   <h2 class="title">{{product.name}}</h2>
+
+   <div class="priceContainer">
+     <span class="priceLabel">Price:</span>
+     <span class="price">{{product.price}}</span>
+   </div>
+
+   <p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false" />
+ </div>
+  <p-footer class="productBtn">
+    <button
+      type="button"
+      pButton
+      icon="pi pi-pencil"
+      (click)="onEditProduct()"
+      label="Edit">
+    </button>
+    <button
+      type="button"
+      pButton
+      icon="pi pi-times"
+      (click)="onDeleteProduct()"
+      label="Delete"
+      #deleteButton
+      class="p-button-danger">
+    </button>
+  </p-footer>
+</div>
+
+<p-confirmPopup/>
