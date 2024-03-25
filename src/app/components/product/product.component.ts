@@ -7,11 +7,13 @@ import {PopupComponent} from '../popup/popup.component';
 import {ButtonModule} from 'primeng/button';
 import {ConfirmationService} from 'primeng/api';
 import {ConfirmPopupModule} from 'primeng/confirmpopup';
+import {TruncateNamePipe} from '../../pipes/truncateName/truncate-name.pipe';
+import {AddCurrencySignPipe} from '../../pipes/addCurrencySign/add-currency-sign.pipe';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [RatingModule, NgOptimizedImage, FormsModule, PopupComponent, ButtonModule, ConfirmPopupModule],
+  imports: [RatingModule, NgOptimizedImage, FormsModule, PopupComponent, ButtonModule, ConfirmPopupModule, TruncateNamePipe, AddCurrencySignPipe],
   providers:[ConfirmationService],
   templateUrl: './product.component.html',
   styleUrl: './product.component.scss'

@@ -31,7 +31,7 @@ export class HomeComponent {
       .getProducts('http://localhost:3000/clothes', {page, perPage})
       .subscribe({
         next: (products) => {
-          this.products = products.items.reverse();
+          this.products = products.items;
           this.totalProducts = products.total
           this.page = products.page;
           this.perPage = products.perPage
@@ -90,10 +90,6 @@ export class HomeComponent {
   }
 
   onConfirm(product: Product) {
-    if (!Object.values(product).every((item) => item)) {
-      return;
-    }
-
     if (this.isEditMode) {
       this.editProduct(product)
       this.isEditMode = false

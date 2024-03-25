@@ -36,7 +36,7 @@ app.get("/clothes", (req, res) => {
     const start = page * perPage;
     const end = start + perPage;
 
-    const result = jsonData.items.slice(start, end);
+    const result = jsonData.items.reverse().slice(start, end);
 
     res.status(200).json({
       items: result,

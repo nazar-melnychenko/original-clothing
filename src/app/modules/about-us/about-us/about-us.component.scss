@@ -1,0 +1,15 @@
+.aboutUsWrapper {
+  max-width: 1140px;
+  margin: 0 auto;
+  text-align: center;
+
+  p {
+    display: inline-block;
+    text-align: justify;
+    margin-bottom: 20px;
+
+    &:first-letter {
+      margin-left: 30px;
+    }
+  }
+}

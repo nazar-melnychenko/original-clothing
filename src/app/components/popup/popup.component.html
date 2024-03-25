@@ -1,21 +1,28 @@
 <p-dialog [header]="header" [(visible)]="isVisible" [modal]="true" [closable]="false">
-  <div class="inputWrapper">
+  <div class="inputWrapper" [formGroup]="productForm">
     <div class="row">
       <span class="price-label">Name:</span>
-      <input type="text" [(ngModel)]="product.name">
+      <input type="text" formControlName="name">
     </div>
     <div class="row">
       <span class="price-label">Price:</span>
-      <input type="text" [(ngModel)]="product.price">
+      <input type="text" formControlName="price">
     </div>
     <div class="row">
       <span class="price-label">Image:</span>
-      <input type="text" [(ngModel)]="product.image">
+      <input type="text" formControlName="image">
     </div>
-    <p-rating [(ngModel)]="product.rating" [cancel]="false" />
+    <p-rating formControlName="rating" [cancel]="false" />
   </div>
   <p-footer>
-    <button type="button" pButton icon="pi pi-check" (click)="onConfirm()" label="Add"></button>
+    <button
+      type="button"
+      pButton
+      icon="pi pi-check"
+      (click)="onConfirm()"
+      label="Confirm"
+      [class.p-disabled]="!productForm.valid"
+    ></button>
     <button type="button" pButton icon="pi pi-times" (click)="onCancel()" label="Cancel"></button>
   </p-footer>
 </p-dialog>

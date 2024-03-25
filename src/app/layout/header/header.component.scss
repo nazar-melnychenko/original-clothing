@@ -2,8 +2,30 @@
   border-bottom: 1px solid #1e1c1c;
   padding: 20px 10px;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  .logo {
+    width: 300px;
+  }
+
+  nav {
+    margin: 10px 0;
+
+    a {
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: 500;
+      color: #000;
+      font-size: 20px;
+
+      &.active {
+        color: #3B82F6;
+
+      }
+    }
+    }
 }
 
-.logo {
-  width: 300px;
-}
+
